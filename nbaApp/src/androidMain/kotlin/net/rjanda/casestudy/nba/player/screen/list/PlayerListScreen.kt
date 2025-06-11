@@ -2,8 +2,10 @@ package net.rjanda.casestudy.nba.player.screen.list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
@@ -138,8 +140,14 @@ private fun PlayerFrame(
             Spacer(Modifier.height(2.dp))
 
             Text(player.fullName, style = MaterialTheme.typography.titleMedium)
-            player.team?.fullName?.let { team ->
-                Text(team, style = MaterialTheme.typography.bodySmall)
+
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                player.team?.fullName?.let { team ->
+                    Text(team, style = MaterialTheme.typography.bodySmall)
+                }
+                player.position?.let { position ->
+                    Text("($position)", style = MaterialTheme.typography.bodySmall)
+                }
             }
 
         }
