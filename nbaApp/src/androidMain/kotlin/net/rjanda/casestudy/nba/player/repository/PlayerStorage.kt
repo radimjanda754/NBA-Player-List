@@ -2,6 +2,7 @@ package net.rjanda.casestudy.nba.player.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.mapNotNull
 import net.rjanda.casestudy.nba.player.model.data.Player
 
@@ -34,8 +35,8 @@ interface PlayerStorage {
     fun observePlayerById(playerleId: Int): Flow<Player>
 
     /**
-     * Observes the list of all players stored locally, providing updates whenever
-     * the data changes.
+     * Observes the list of all players stored locally, providing updates whenever the data changes.
+     * Emits nothing if the list is empty.
      *
      * @return A flow emitting the current list of players.
      */
@@ -66,6 +67,6 @@ class InMemoryPlayerStorage : PlayerStorage {
         }
     }
 
-    override fun observePlayers(): Flow<List<Player>> = mStoredPlayers
+    override fun observePlayers(): Flow<List<Player>> = mStoredPlayers.filter { it.isNotEmpty() }
 
 }
