@@ -82,6 +82,9 @@ android {
             localProperties.load(FileInputStream(localPropertiesFile))
         }
         val apiKey = localProperties.getProperty("API_KEY")
+        if (apiKey.isNullOrBlank()) {
+            throw GradleException("API_KEY not set! Set API_KEY in local.properties file.")
+        }
         buildConfigField("String", "API_KEY", "\"$apiKey\"")
     }
     packaging {
