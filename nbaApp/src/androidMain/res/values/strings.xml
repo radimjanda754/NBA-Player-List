@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NBA Player List</string>
+
+    <string name="label_title">Title</string>
+    <string name="label_retry">Retry</string>
+
+    <string name="label_first_name">First name</string>
+    <string name="label_last_name">Last name</string>
+    <string name="label_position">Position</string>
+    <string name="label_height">Height</string>
+    <string name="label_weight">Weight</string>
+    <string name="label_jersey_number">Jersey number</string>
+    <string name="label_college">College</string>
+    <string name="label_country">Country</string>
+    <string name="label_team">Team</string>
+    <string name="label_show_team">Show team info</string>
+
+    <string name="label_conference">Conference</string>
+    <string name="label_division">Division</string>
+    <string name="label_city">City</string>
+    <string name="label_name">Name</string>
+    <string name="label_full_name">Full name</string>
+    <string name="label_abbreviation">Abbreviation</string>
+
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="no_data_available">No data available</string>
+    <string name="error_state">An error has happened during request. Please try again.</string>
+</resources>
